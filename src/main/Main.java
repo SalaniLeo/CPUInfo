@@ -6,6 +6,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import main.app.MHzCheck;
+import main.app.ModelCheck;
 import main.app.tempCheck;
 import main.window.window;
 
@@ -18,14 +19,15 @@ public class Main {
 	public static void main(String[] args) {
 		Runnable run = new Runnable() {
 		    public void run() {
-		    	new MHzCheck().checkMhz();
 				new tempCheck().check();
+		    	new MHzCheck().checkMhz();
 		    }
 		};
 	ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-	executor.scheduleAtFixedRate(run, 100, 100, TimeUnit.MILLISECONDS);	
+	executor.scheduleAtFixedRate(run, 0, 1, values.timeUnit);	
 	window.loadWindow();
-	MHzCheck.createLabels();
+	ModelCheck.check();
+	MHzCheck.createLabels();	
 	}
 	
 }

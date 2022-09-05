@@ -8,12 +8,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JLabel;
+import javax.swing.border.EtchedBorder;
 
 import main.window.window;
 
 
 public class MHzCheck {
 	
+	int MHz;
 	public String values;
 	public static String CoreMhz;
 	public static String Cores;
@@ -24,6 +26,7 @@ public class MHzCheck {
 	int p = 0;
 
 public void createLabels() {    
+	System.out.println("3");
 	
 	labels = new JLabel[12];  
 	
@@ -35,12 +38,14 @@ for (p = 0; p < 12; p++) {
 	labels[p].setBackground(Color.DARK_GRAY);
 	labels[p].setOpaque(true);
 	labels[p].setVisible(true);
-	labels[p].setPreferredSize(new Dimension(100,100));
-	window.f.add(labels[p]);
+	labels[p].setBorder(new EtchedBorder());
+	labels[p].setPreferredSize(new Dimension(150,30));
+	window.MhzPanel.add(labels[p]);
 
     }    
 }
 public void checkMhz(){
+	System.out.println(2);
 
 try (BufferedReader in = new BufferedReader(new FileReader("/proc/cpuinfo"));) {
 	
