@@ -34,7 +34,7 @@ public class settings extends JPanel implements ActionListener{
 		sButton.setVisible(true);
 		sButton.setBounds(10,0,50,50);
 		sButton.setFocusable(false);
-		sButton.setBackground(Color.DARK_GRAY);
+		sButton.setBackground(values.thirdColor);
 		sButton.addActionListener(this);
 		  try {
 			    Image img = ImageIO.read(getClass().getResource("/images/settings.png"));
@@ -45,17 +45,19 @@ public class settings extends JPanel implements ActionListener{
 			  }
 		  
 		  jLabel1.setForeground(Color.white);
-		  jTextField1.setBackground(Color.gray);
+		  jTextField1.setBackground(values.thirdColor);
 		  jTextField1.setBorder(null);
+		  jTextField1.setForeground(Color.white);
 		  jTextField1.setPreferredSize(new Dimension(60,20));
-		  jComboBox1.setBackground(Color.gray);
+		  jComboBox1.setBackground(values.thirdColor);
 		  jComboBox1.setFocusable(false);
 		  jComboBox1.setBorder(null);
+		  jComboBox1.setForeground(Color.white);
 		  
 		  add(jComboBox1);
 		  add(jLabel1);
 		  add(jTextField1);
-		  setBackground(Color.DARK_GRAY);
+		  setBackground(values.mainColor);
 		  
 	}
                                                            
