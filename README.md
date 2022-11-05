@@ -1,4 +1,4 @@
-# simple CPU infos
+# basic CPU infos
 
  <img src="/src/CPUProperties.png" alt=""> 
 
